@@ -1,6 +1,8 @@
 import java.time.LocalDate;
 import java.util.Scanner;
 
+import javax.swing.SwingUtilities;
+
 public class Main {
     
     public static void main(String[] args)
@@ -93,21 +95,12 @@ public class Main {
         Person thPerson = new Person(lastName, firstName, middleName, birthday , gender, height, weight);
 
         StudentInfo studentInfo = new StudentInfo(studentId, yearLevel, contactNo, email, program);
-        System.out.println("Your Information:");
-        System.out.println("Last Name: " + thPerson.getLastName());
-        System.out.println("First Name: "+ thPerson.getFirstName());
-        System.out.println("Middle Name: "+ thPerson.getMiddleName());
-        System.out.println("Birthday: "+ thPerson.getBirthDate());
-        System.out.println("Gender: " + thPerson.getGender());
-        System.out.println("Height: "+ thPerson.getHeight() + "cm");
-        System.out.println("Weight: "+ thPerson.getWeight() + "kg");
-        address.displayAddress(2);
-        System.out.println("Student ID: " + studentInfo.getIdNo());
-        System.out.println("Year Level: " + studentInfo.getYearLevel());
-        System.out.println("Contact Number: " + studentInfo.getContactNo());
-        System.out.println("Email: " + studentInfo.getEmail());
-        System.out.println("Program: " + studentInfo.getProgram());
 
-        
+
+        SwingUtilities.invokeLater(() -> {
+            // Create an instance of MyFrame and make it visible
+            MyFrame frame = new MyFrame(thPerson, address, studentInfo);
+            frame.setVisible(true);
+        });
     }
 }
