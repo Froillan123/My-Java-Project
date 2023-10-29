@@ -4,7 +4,8 @@ import java.util.Scanner;
 public class Main {
     
     public static void main(String[] args)
-    {
+    {   
+        
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter Your Last Name: ");
@@ -43,13 +44,36 @@ public class Main {
         System.out.println("Enter your weight (in kilograms): ");
         double weight = scanner.nextDouble();
 
+         scanner.nextLine(); 
+
+        System.out.println("Enter House Number: ");
+        String houseNo = scanner.nextLine();      
+
+        System.out.println("Enter Street Number: ");
+        String streetNo = scanner.nextLine();
+
+        System.out.println("Enter Street Name: ");
+        String streetName = scanner.nextLine();
+
+        System.out.println("Enter Barangay: ");
+        String barangay = scanner.nextLine();
+
+        System.out.println("Enter City: ");
+        String city = scanner.nextLine();
+
+        System.out.println("Enter Province/City: ");
+        String province = scanner.nextLine();
+
+        System.out.println("Enter Zip Code: ");
+        String zipCode = scanner.nextLine();
+
         scanner.close();
 
         System.out.println();
-
+        Address address = new Address(houseNo,streetNo, streetName, barangay, city, province, zipCode);
         LocalDate birthday = LocalDate.of(birthYear, birthMonth, birthDay);
         Person thPerson = new Person(lastName, firstName, middleName, birthday , gender, height, weight);
-        System.out.println("Your Information");
+        System.out.println("Your Information:");
         System.out.println("Last Name: " + thPerson.getLastName());
         System.out.println("First Name: "+ thPerson.getFirstName());
         System.out.println("Middle Name: "+ thPerson.getMiddleName());
@@ -57,5 +81,6 @@ public class Main {
         System.out.println("Gender: " + thPerson.getGender());
         System.out.println("Height: "+ thPerson.getHeight() + "cm");
         System.out.println("Weight: "+ thPerson.getWeight() + "kg");
+        address.displayAddress(2);
     }
 }
