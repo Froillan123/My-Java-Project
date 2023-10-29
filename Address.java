@@ -22,23 +22,22 @@ public class Address
     public void displayShortAddress()
     {
         System.out.println("Address: " + StreetNo + " " + Street + " " + "Street, " + "Brgy. " + Barangay + " " + City + " " + "City");
-        System.out.println();
     }
 
     public void format2()
     {
         System.out.println("Address: " + HouseNo + " " + StreetNo + " " + Street + " " + "Street, " + "Brgy. " + Barangay + " " + City + " " + Province + " " + ZipCode + " ");
-        System.out.println();
+        
     }
     public void format3()
     {
         System.out.println("Address: " + StreetNo + " " + Street +  "" + "Street, " + City + " " + "City, " + ZipCode + " ");
-        System.out.println();
+        
     }
     public void format4()
     {
         System.out.println("Address: " + Street + " " + "Brgy. " + Barangay + " " + City + "City" + "St., " + ZipCode + " ");
-        System.out.println();
+
     }
 
     public void displayAddress(int format)
